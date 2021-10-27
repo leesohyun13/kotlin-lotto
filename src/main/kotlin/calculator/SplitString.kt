@@ -1,8 +1,8 @@
 package calculator
 
-object SplitCharacter {
-    const val DELIMITER_UNIT_ONE = ","
-    const val DELIMITER_UNIT_SECOND = ":"
+object SplitString {
+    private const val DELIMITER_UNIT_ONE = ","
+    private const val DELIMITER_UNIT_SECOND = ":"
     private val customRegex = Regex("//(.)\n(.*)")
 
     fun split(text: String): List<String> {
@@ -17,11 +17,10 @@ object SplitCharacter {
         DELIMITER_UNIT_ONE, DELIMITER_UNIT_SECOND
     )
 
-    private fun splitCustom(text: String): List<String>? {
-        val result = customRegex.find(text)
-        result?.let {
+    private fun splitCustom(text: String): List<String> {
+        customRegex.find(text)?.let {
             val customDelimiter = it.groupValues[1]
             return it.groupValues[2].split(customDelimiter)
-        } ?: return null
+        } ?: return emptyList()
     }
 }
