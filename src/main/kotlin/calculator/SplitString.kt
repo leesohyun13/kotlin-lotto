@@ -8,7 +8,7 @@ object SplitString {
     fun split(text: String): List<String> {
         val customList = splitCustom(text)
         return when {
-            customList.isNullOrEmpty() -> splitDefault(text)
+            customList.isEmpty() -> splitDefault(text)
             else -> customList.flatMap { splitDefault(it) }
         }
     }
