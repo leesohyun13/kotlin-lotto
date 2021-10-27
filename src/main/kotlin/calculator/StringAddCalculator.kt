@@ -3,7 +3,7 @@ package calculator
 class StringAddCalculator {
     fun add(text: String?): Int {
         if (text.isNullOrEmpty()) return RETURN_NULL_OR_EMPTY_STRING
-        return SplitCharacter().split(text).sumOf { validationInt(it) }
+        return SplitCharacter.split(text).sumOf { validationInt(it) }
     }
 
     private fun validationInt(text: String): Int {
