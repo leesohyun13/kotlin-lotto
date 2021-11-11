@@ -5,7 +5,7 @@ package lotto.model
  * */
 class WinNumber private constructor(
     private val _lastWinNumber: Lotto,
-    private val _bonusNumber: LottoNumber
+    private val _bonusNumber: LottoNumber,
 ) {
 
     init {
@@ -23,12 +23,15 @@ class WinNumber private constructor(
 
         fun inputWinNumber(
             lastWinNumber: String?,
-            bonusNumber: Int?
+            bonusNumber: Int?,
         ): WinNumber {
             require(!lastWinNumber.isNullOrBlank())
             require(bonusNumber != null)
 
-            return WinNumber(Lotto.parsingTextToLotto(lastWinNumber), LottoNumber(bonusNumber))
+            return WinNumber(
+                _lastWinNumber = Lotto.parsingTextToLotto(lastWinNumber),
+                _bonusNumber = LottoNumber(bonusNumber)
+            )
         }
     }
 }

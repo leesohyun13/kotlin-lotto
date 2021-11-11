@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 class LottoNumberListGeneratorTest {
 
     @Test
-    @DisplayName("수동 로또 번호들 생성해 반환하는 로직 테스트")
+    @DisplayName("수동 로또 번호들 생성해 반환하는 로직 확인")
     fun `check manual lotto generation logic`() {
         // given
         val numbers = listOf("1,10,22,13,14,45")

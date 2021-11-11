@@ -11,7 +11,7 @@ class LottoCountTest {
     @Test
     @DisplayName("수동과 자동 로또 개수의 범위 확인")
     fun `check lotto count validation`() {
-        val price = Price(5000)
+        val price = Price(5_000)
         val manualCount = 4
 
         val manualLottoCount = LottoCount(price.lottoCount).createLottoNumber(manualCount)
@@ -24,7 +24,7 @@ class LottoCountTest {
     @Test
     @DisplayName("로또 생성할 수 있는 개수 이상의 수를 입력하는 경우")
     fun `check status that exceed nax count`() {
-        val price = Price(5000)
+        val price = Price(5_000)
         val manualCount = 7
 
         assertThrows<IllegalArgumentException> {
@@ -35,7 +35,7 @@ class LottoCountTest {
     @Test
     @DisplayName("로또 생성 개수가 음수인 경우 0을 반환하는 상황")
     fun `check when lotto count less than zero`() {
-        val price = Price(5000)
+        val price = Price(5_000)
         val manualCount = -1
         val expectedManualCount = 0
 
